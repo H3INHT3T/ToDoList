@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To Do List</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="center">
+            <div class="header">
+                <h1>To Do List</h1>
+                <div class="todo">
+                    <div class="input">
+                        <input type="text" id="text" value="Say Something....">
+                        <button onclick="addText()" class="add-btn"><i class="fas fa-plus-circle fa-5x"></i></button>
+                    </div>
+                </div>
+                <div class="listbox">            
+                    <div>
+                        <ul id="list">
+                            <li class="list-item" id="list">
+                                <span id="listText">Call To Poe</span>
+                                <button class="btn btn-edit" onclick="editText"><i class="far fa-edit"></i></button>
+                                <button class="btn btn-del" onclick="delList"><i class="far fa-trash-alt"></i></button>
+                            </li>
+                
+                            <li class="list-item" id="list">
+                                <span id="listText">Breakfast Time</span>
+                                <button class="btn btn-edit" onclick="editText"><i class="far fa-edit"></i></button>
+                                <button class="btn btn-del" onclick="delList"><i class="far fa-trash-alt"></i></button>
+                            </li>
+                
+                            <li class="list-item" id="list">
+                                <span id="listText">Watch Movie</span>
+                                <button class="btn btn-edit" onclick="editText"><i class="far fa-edit"></i></button>
+                                <button class="btn btn-del" onclick="delList"><i class="far fa-trash-alt"></i></button>
+                            </li>
+                
+                            <li class="list-item" id="list">
+                                <span id="listText">Lunch Time</span>
+                                <button class="btn btn-edit" onclick="editText"><i class="far fa-edit"></i></button>
+                                <button class="btn btn-del" onclick="delList"><i class="far fa-trash-alt"></i></button>
+                            </li>
+        
+                            <li class="list-item" id="list">
+                                <span id="listText">Bore In The House</span>
+                                <button class="btn btn-edit" onclick="editText"><i class="far fa-edit"></i></button>
+                                <button class="btn btn-del" onclick="delList"><i class="far fa-trash-alt"></i></button>
+                            </li>
+        
+                            <li class="list-item" id="list">
+                                <span id="listText">Prepare for BWD6</span>
+                                <button class="btn btn-edit" onclick="editText"><i class="far fa-edit"></i></button>
+                                <button class="btn btn-del" onclick="delList"><i class="far fa-trash-alt"></i></button>
+                            </li>
+        
+                            <li class="list-item" id="list">
+                                <span id="listText">Online Class Video Record</span>
+                                <button class="btn btn-edit" onclick="editText"><i class="far fa-edit"></i></button>
+                                <button class="btn btn-del" onclick="delList"><i class="far fa-trash-alt"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            let text = document.getElementById("text");
+            let list = document.getElementById("list");
+            let i = 1;
+            let lengthText = 3;
+            function textFilter(x){
+                if(x){
+                    if(x.length >= lengthText){
+                        return x;
+                    }else{
+                        alert("Length must be 3.")
+                        return false;
+                    }
+                }else{
+                    alert("Input text can't be empty.")
+                    return false;
+                };
+            };
+    
+            function addList(input){
+                list.innerHTML += `<li class="list-item  style-list" id="list${i}">
+                                <span id="listText${i}">${input}</span>
+                                <button class="btn btn-edit" onclick="editText(${i})"><i class="far fa-edit"></i></button>
+                                <button class="btn btn-del" onclick="delList(${i})"><i class="far fa-trash-alt"></i></button>
+                            </li>`;
+                i++;
+            };
+    
+            function delList(listId){
+                let current = document.getElementById(`list${listId}`);
+                let currentText = document.getElementById(`listText${listId}`).innerHTML;
+                let delconfirm = confirm(`Do you want to delete '${currentText}' ?`);
+                if(delconfirm){
+                    list.removeChild(current);
+                }else{
+                    console.log("Delete Cancelled.")
+                }
+            };
+    
+            function editText(listId){
+                let currentText = document.getElementById(`listText${listId}`);
+                let newText = prompt("Edit",currentText.innerHTML);
+                if(textFilter(newText)){
+                    currentText.innerHTML = newText;
+                };
+    
+            };
+    
+            function addText(){
+                let inputText = textFilter(text.value);
+                if(inputText){
+                    addList(inputText);
+                    text.value = "";
+                };
+            };
+    
+        </script>
+    
+    </body>
+</html>

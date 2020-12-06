@@ -1,0 +1,151 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+@media only screen and (max-width: 600px){
+    .header{
+        background-color:#28c7fa;
+        display: inline-block;
+        color: #fdfdfd;
+        text-align: left;
+        font-size: 15px;
+        font-weight: 700;
+        width: 100%;
+        /* max-width: 400px; */
+        max-height: 800px;
+        /* max-width: inherit; */
+        border: 2px solid #28c7fa;
+        border-radius: 40px 40px 40px 40px;
+    }
+    .listbox{
+        background-color: #fdfdfd;
+        color: #28c7fa;
+        border: 2px solid #fdfdfd;
+        border-radius: 40px;
+        width: 100%;
+        height: 750px;
+        max-width: inherit;
+        display: inline-block;
+    }
+
+    .btn-edit{
+        margin-left: 260px;
+        display: inline-block;
+    }
+
+    li{
+        list-style-type: none;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 20px;
+    }
+    
+    .style-list{
+        margin: 0;
+        padding: 15px;
+    }
+    .center{
+        margin: 50px auto;
+        /* max-width: 450px; */
+        /* max-height: 750px; */
+    }
+}
+
+.center{
+    margin: 150px auto;
+    max-width: 450px;
+    /* max-height: 750px; */
+}
+
+.header{
+    background-color:#28c7fa;
+    display: inline-block;
+    color: #fdfdfd;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 700;
+    width: 450px;
+    max-height: 750px;
+    max-width: inherit;
+    /* border: 2px solid #28c7fa; */
+    border-radius: 40px 40px 40px 40px;
+}
+
+.listbox{
+    background-color: #fdfdfd;
+    color: #28c7fa;
+    border: 2px solid #fdfdfd;
+    border-radius: 40px;
+    width: 100%;
+    max-height: 561px;
+    max-width: inherit;
+    display: inline-block;
+}
+
+h1{
+    padding: 35px 0px 0px 30px;
+    margin: 0;
+}
+
+.input{
+    padding: 0px 0px 30px 30px;
+}
+
+#text{
+    border: none;
+    border-left: 5px solid white;
+    background-color: #28c7fa;
+    color: #fdfdfd;
+    font-size: 15px;
+    text-indent: 5px;
+    padding-top: 5px;
+}
+
+
+.add-btn{
+    background-color: #28c7fa;
+    border: none;
+    float: inherit;
+    margin: 0px 0px 5px 100px;
+}
+
+.fa-plus-circle{
+    color:#fdfdfd;
+    padding-bottom: 20px;
+    display: inline;
+}
+
+.btn{
+    border: none;
+    background-color: #fdfdfd;
+}
+
+.btn-edit{
+    margin-left: 70px;
+    display: inline-block;
+}
+
+span{
+    display: inline-block;
+    width: 250px;
+}
+
+li{
+    list-style-type: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+#list{
+    margin: 0;
+    padding: 15px;
+}
+.fa-edit{
+    color: rgb(86, 250, 135);
+}
+
+.fa-trash-alt{
+    color: rgb(250, 75, 75);
+}
